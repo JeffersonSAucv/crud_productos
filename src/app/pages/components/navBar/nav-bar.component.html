@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" style="justify-content: space-between">
+
+ <div>
+  <span>LISTADO DE PRODUCTOS, Bienvenido <strong> {{getNameUser | titlecase}}</strong></span>
+
+ </div>
+
+  <div>
+    <!-- <a mat-button [hidden]="autenticacionService.verificarSesion()"><mat-icon>login</mat-icon>INICIAR SESION</a> -->
+    <a mat-button (click)="cerrarSesion()"><mat-icon>logout</mat-icon>CERRAR SESION</a>
+  </div>
+</mat-toolbar>
+

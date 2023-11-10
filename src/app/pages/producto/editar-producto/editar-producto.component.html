@@ -1,0 +1,107 @@
+<div class="container">
+  <h2 mat-dialog-title>{{accion}} Producto</h2>
+  <mat-spinner [diameter]="30" *ngIf="spinnerLoading"></mat-spinner>
+</div>
+
+<form [formGroup]="myForm" autocomplete="off">
+
+  <mat-dialog-content>
+    <div class="row">
+      <div class="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Ingrese un producto</mat-label>
+          <input matInput
+          formControlName="nombre"
+          placeholder="Ej. Leche">
+        </mat-form-field>
+        <div class="error" *ngIf="myForm.get('nombre')?.hasError('required') && myForm.get('nombre')?.touched">
+          <span>El campo nombre es <strong>requerido</strong>.</span>
+        </div>
+      </div>
+
+      <div class="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Categoria</mat-label>
+          <mat-select
+          formControlName="categoria">
+           <mat-option value="-1">--Seleccione--</mat-option>
+            <mat-option
+            *ngFor="let categoria of categorias"
+             [value]="categoria.value">
+              {{categoria.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="error" *ngIf="myForm.get('categoria')?.hasError('min') && myForm.get('categoria')?.touched">
+          <span>Debe ingresar una categoria <strong>válida</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Ingrese un precio</mat-label>
+          <input
+          formControlName="precio"
+          matInput placeholder="Ej. $50">
+        </mat-form-field>
+        <div class="error" *ngIf="myForm.get('precio')?.hasError('min') && myForm.get('precio')?.touched">
+          <span>El precio ingresado es <strong>incorrecto</strong> </span>
+        </div>
+        <div class="error" *ngIf="myForm.get('precio')?.hasError('pattern') && myForm.get('precio')?.touched">
+          <span>El precio debe ser un número <strong>válido</strong>.</span>
+        </div>
+      </div>
+
+      <div class="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Ingrese una Descripción</mat-label>
+          <input
+           formControlName="descripcion"
+           matInput placeholder="Ej. Lorem impsum">
+        </mat-form-field>
+        <div class="error" *ngIf="myForm.get('descripcion')?.hasError('minlength') && myForm.get('descripcion')?.touched">
+          <span>La descripción debe tener 3 caracteres como <strong>mínimo</strong>.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Ingrese una URL</mat-label>
+          <input
+           formControlName="fotoUrl"
+           matInput placeholder="Ej. https:/www.image.png">
+        </mat-form-field>
+        <div class="error" *ngIf="myForm.get('fotoUrl')?.hasError('required') && myForm.get('fotoUrl')?.touched">
+          <span>La URL es <strong>requerida</strong>.</span>
+        </div>
+        <div class="error" *ngIf="myForm.get('fotoUrl')?.hasError('pattern') && myForm.get('fotoUrl')?.touched">
+          <span>El URL no es<strong>válida</strong>.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <mat-slide-toggle
+        formControlName="estado"
+        [checked]="checked"
+        color="primary"
+        >Disponible</mat-slide-toggle>
+      </div>
+    </div>
+
+  </mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+   <!-- tiene un atributo que envia false o true para que refresque o no el listado -->
+  <button type="button" (click)="cancelar()" mat-button [mat-dialog-close]="false" >Cancel</button>
+  <button [disabled]="myForm.invalid" type="button"  (click)="guardarProducto()" mat-button>Guardar</button>
+</mat-dialog-actions>
+</form>

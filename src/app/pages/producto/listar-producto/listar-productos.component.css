@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+}
+
+
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 90%;
+}
+
+
+.btn-edit , .btn-delete {
+  cursor: pointer;
+}
+
+
+.btn-delete {
+  color: #e20b3a;
+}
+
+.btn-edit {
+  color: #376dcd;
+}
+
+.btn {
+  margin-left: 20px;
+  width: 120px;
+  height: 40px;
+}
+
+.busqueda {
+  padding: 10px 25px 0px 25px;
+}
+
+.table{
+  padding: 0px 25px;
+}

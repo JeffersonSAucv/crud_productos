@@ -1,0 +1,60 @@
+<div class="centered-container">
+
+
+  <div class="card">
+    <form  [formGroup]="myForm" (ngSubmit)="createAcount()" autocomplete="off">
+
+      <p>CREA TU CUENTA</p>
+      <div class="container">
+       <mat-form-field appearance="outline">
+         <mat-label>Ingresa tu nombre</mat-label>
+         <input matInput
+         formControlName="nombre"
+         placeholder="Ej. Carlos">
+       </mat-form-field>
+       <!-- valida si es el que el campo tiene error y/o fue tocado -->
+       <div class="error" *ngIf="myForm.get('nombre')?.hasError('minlength') && myForm.get('nombre')?.touched">
+        <span>El nombre ingresado es <strong>muy corto</strong> </span>
+      </div>
+
+       <mat-form-field appearance="outline">
+        <mat-label>Ingresa un correo</mat-label>
+        <input matInput
+        formControlName="usuario"
+        placeholder="Ej. Carlos@test.com">
+        </mat-form-field>
+        <div class="error" *ngIf="myForm.get('usuario')?.hasError('pattern') && myForm.get('usuario')?.touched">
+          <span>El correo ingresado <strong>no es válido</strong> </span>
+        </div>
+
+       <mat-form-field appearance="outline">
+         <mat-label>Ingrese una contraseña</mat-label>
+         <input matInput [type]="hide ? 'password' : 'text'"
+         formControlName="password"
+         placeholder="Ej. admin">
+         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+         </button>
+       </mat-form-field>
+
+       <div class="error" *ngIf="myForm.get('password')?.hasError('minlength')  && myForm.get('password')?.touched">
+        <span>La contraseña debe tener al <strong>menos 6 caracteres</strong> </span>
+      </div>
+
+       <p class="register_text">¿Ya tienes una cuenta? <a routerLink="/login"><strong>Inicia Sesión</strong></a></p>
+      </div>
+
+
+
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">
+        <mat-spinner *ngIf="logginLoading" diameter="25" class="spinner"  color="accent"></mat-spinner>
+        <span *ngIf="!logginLoading"> Ingresar</span>
+      </button>
+
+    </form>
+  </div>
+
+
+
+</div>

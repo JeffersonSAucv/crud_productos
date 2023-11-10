@@ -1,0 +1,44 @@
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Establece el alto al 100% de la ventana */
+}
+p{
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 60px;
+  font-size: 25px;
+
+}
+.card {
+  padding: 20px;
+  width: 25%;
+  height: auto;
+  background-color: #f0f0f0;
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+button{
+  width: 100%;
+  padding: 10px;
+  }
+
+.container mat-form-field{
+  width: 100%;
+}
+
+mat-form-field mat-input {
+  background-color: #fff; /* Fondo blanco */
+}
+
+.register_text{
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: #3c3c3cab;
+}
+

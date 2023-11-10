@@ -1,0 +1,20 @@
+
+.container{
+  height: calc(100vh - 64px);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.842);
+
+}
+
+.card-grid {
+  display:  grid;
+  /* outline: 1px solid #ff0000; */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  );
+  width: 100%;
+  gap: 16px;
+
+
+}

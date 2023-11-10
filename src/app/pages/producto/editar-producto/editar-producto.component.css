@@ -1,0 +1,31 @@
+mat-form-field {
+  padding-top: 15px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  margin: 0px 5px;
+}
+
+.error {
+  color:  #be0e34;
+  margin-top: -20px;
+  margin-left: 4px;
+  font-size: 12.5px;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container mat-spinner{
+  margin-right: 30px;
+margin-top: 10px;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AutenticacionService } from './service/autenticacion.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'crudProductos';
+  constructor(
+    private autenticacionService : AutenticacionService
+  ) { }
+
+  get verificarSesion(){
+    return this.autenticacionService.verificarSesion();
+  }
+
 }
