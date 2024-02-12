@@ -24,10 +24,10 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { AuthGuard } from '../auth.guard';
+import { PrivateGuard } from '../private.guard';
 import { TokenInterceptorService } from '../service/token-interceptor.service';
-
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -54,6 +54,9 @@ import { TokenInterceptorService } from '../service/token-interceptor.service';
     MatProgressBarModule, //progress bar
     MatSnackBarModule, //snack bar
     MatProgressSpinnerModule, //spinner circular
+    MatSidenavModule, //sideBar
+    MatListModule , // lista
+
   ],
   exports: [
 
@@ -76,11 +79,13 @@ import { TokenInterceptorService } from '../service/token-interceptor.service';
       MatProgressBarModule, //progress bar
       MatSnackBarModule, //snack bar
       MatProgressSpinnerModule, //spinner circular
+      MatSidenavModule, //sideBar
+      MatListModule, // lista
 
 
   ],
   providers: [
-    AuthGuard,
+    PrivateGuard,
     {
       provide : HTTP_INTERCEPTORS,
       useClass : TokenInterceptorService,

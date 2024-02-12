@@ -5,27 +5,33 @@ import { ListarProductoComponent } from './pages/producto/listar-producto/listar
 import { RegisterComponent } from './pages/register/register.component';
 import { MainPageComponentComponent } from './pages/main/main-page-component/main-page-component.component';
 
-import { AuthGuard } from './auth.guard';
+import { PrivateGuard } from './private.guard';
 import { RolGuard } from './rol.guard';
 import { Roles } from './enums/rol.enum';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { PublicGuard } from './public.guard';
 
 const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'login',  // si no se pone path te redirige al listar productos
+    redirectTo: 'main-page',  // si no se pone path te redirige al listar productos
     pathMatch : 'full'
   },
   {
     path: 'login',
-    canActivate: [],
+    canActivate: [PublicGuard],
     component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [PublicGuard]
   },
   {
     path: 'lista-productos',
     component: ListarProductoComponent,
-    canActivate: [AuthGuard, RolGuard],
+    canActivate: [PrivateGuard, RolGuard],
     data : {
       rol : Roles.ADMIN_ROLE  //"USER_ROL"
     }
@@ -34,26 +40,21 @@ const routes: Routes = [
   {
     path: 'main-page',
     component: MainPageComponentComponent,
-    canActivate: [AuthGuard],
-
+    canActivate: [PrivateGuard],
   },
   {
     path: 'user-page',
     component: UserPageComponent,
-    canActivate: [AuthGuard,RolGuard],
+    canActivate: [PrivateGuard,RolGuard],
     data : {
       rol : Roles.USER_ROLE  //"USER_ROL"
     }
   },
   {
-    path: 'register',
-    component: RegisterComponent,
-    canActivate: []
-  },
-  {
     path: '**',
     redirectTo: 'login'
-  }
+  },
+
 ];
 
 @NgModule({

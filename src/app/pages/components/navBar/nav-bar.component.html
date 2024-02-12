@@ -1,13 +1,20 @@
-<mat-toolbar color="primary" style="justify-content: space-between">
+<mat-toolbar color="primary">
 
  <div>
-  <span>LISTADO DE PRODUCTOS, Bienvenido <strong> {{getNameUser | titlecase}}</strong></span>
-
+  <span class="titulo-web">LISTADO DE PRODUCTOS, Bienvenido <strong> {{getNameUser | titlecase}}</strong></span>
+  <span class="titulo-movil">LISTADO DE PRODUCTOS</span>
  </div>
 
   <div>
     <!-- <a mat-button [hidden]="autenticacionService.verificarSesion()"><mat-icon>login</mat-icon>INICIAR SESION</a> -->
-    <a mat-button (click)="cerrarSesion()"><mat-icon>logout</mat-icon>CERRAR SESION</a>
+    <div class="sesion-options">
+      <a mat-button (click)="cerrarSesion()">
+        <mat-icon>logout</mat-icon>
+        <span>CERRAR SESION</span>
+      </a>
+    </div>
+
+
   </div>
 </mat-toolbar>
 

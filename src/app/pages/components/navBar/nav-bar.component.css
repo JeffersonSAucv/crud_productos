@@ -1,3 +1,29 @@
-contenedor{
-  justify-content: space-around;
+
+mat-toolbar {
+  height: 64px; /* Ajusta la altura según tus necesidades */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+
+/* Media query para estilos específicos en pantallas más grandes (versión web) */
+@media (width > 600px) {
+  mat-toolbar span.titulo-movil {
+    display: none; /* Ocultar el título móvil en pantallas más grandes */
+  }
+}
+
+/* Media query para estilos específicos en pantallas más pequeñas (versión móvil) */
+@media (width < 600px) {
+  mat-toolbar span.titulo-web {
+    display: none; /* Ocultar el título web en pantallas más pequeñas */
+  }
+
+  mat-toolbar .sesion-options span {
+    display: none; /* Ocultar el título móvil en pantallas más grandes */
+  }
+
 }

@@ -62,6 +62,7 @@ export class AutenticacionService {
 
   cerrarSesion(){
     localStorage.removeItem('token');
+    localStorage.removeItem('userSesion');
     this.router.navigate(['/login']);
 
   }

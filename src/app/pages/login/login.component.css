@@ -1,8 +1,8 @@
-.centered-container {
+/* .centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Establece el alto al 100% de la ventana */
+  height: 100vh;
 }
 p{
   text-align: center;
@@ -31,7 +31,7 @@ button{
 }
 
 mat-form-field mat-input {
-  background-color: #fff; /* Fondo blanco */
+  background-color: #fff;
 }
 
 .register_text{
@@ -41,4 +41,53 @@ mat-form-field mat-input {
   font-size: 15px;
   color: #3c3c3cab;
 }
+ */
 
+
+ .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('src/assets/img/background/bk-1.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.card-login{
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.user-input , .password-input {
+  display: block;
+}
+
+p.title{
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+  letter-spacing: 1.4px;
+}
+
+button.btn-login{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+p.register_text{
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.register_text strong{
+  letter-spacing: 1px;;
+}

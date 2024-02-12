@@ -1,24 +1,54 @@
 
-.card{
+/* .card{
   background-color: rgb(255, 255, 255);
-  /* outline: 1px solid #ff0000; */
   display: grid;
   grid-template-columns:  1fr;
-  grid-template-rows: 1.5fr  0.5fr;
+  grid-template-rows: 1fr 1fr;
   box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  gap: 2px;
+  height: 500px;
+}
 
+.card-image{
+
+  display: grid;
+  grid-template-columns:  1fr;
+  grid-template-rows: 1fr  ;
   justify-items: center;
   align-items: center;
   justify-content: center;
   align-content: center;
 
-  border-radius: 10px;
-  gap: 2px;
-  height: 400px;
 }
 
+.card-body{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 0.25fr)  ;
+  align-content: center;
+  justify-content: center;
+  justify-items: left;
+  gap: 10px;
+}
+
+.card-button{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr  ;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+
 .container_img{
+  padding-top: 10px;
   height: 300px;
+  overflow: hidden;
 
 }
 img{
@@ -30,6 +60,101 @@ img{
 p{
   margin: 0px;
 }
-.titulo p{
+
+.nombre p{
   font-size: 20px;
+  color: #1e1e1e;
+  font-weight: 500;
+
+  justify-content: left;
+}
+
+.card-body{
+  padding: 40px;
+}
+
+.detalle{
+  padding-bottom: 25px;
+}
+.card-button{
+  cursor: pointer;
+  opacity: 0;
+}
+
+.card:hover img{
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+
+
+.card:hover .card-button{
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  opacity: 1;
+} */
+
+img{
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  text-align: center;
+}
+
+
+.card{
+  /* width: 300px; */
+  box-sizing: border-box;
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  height: 620px;
+}
+
+/* centrar imagen dentro del card */
+.img-producto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card hr{
+  width: 100%;
+  margin: 20px 0px;
+}
+.card h4{
+  font-size: 24px;
+}
+
+.card .price{
+  font-size: 20px;
+}
+
+.card  .description p{
+  font-size: 14px;
+  height: 100px;
+}
+
+.card button{
+ width: 100%;
+ opacity: 0;
+ transition: opacity 0.3s ease;
+
+}
+.card img {
+  transition: scale 0.3s ease-in;
+}
+
+.card:hover img{
+  scale: 1.06;
+}
+
+.card:hover button{
+  opacity: 1;
+
+}
+
+@media (width < 990px) {
+  .card button{
+    opacity: 1;
+   }
+
 }

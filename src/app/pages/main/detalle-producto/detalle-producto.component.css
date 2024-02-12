@@ -1,0 +1,25 @@
+.detalle-producto{
+  box-sizing: border-box;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+
+}
+
+.imagen-producto{
+  height: 250px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-producto img{
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}

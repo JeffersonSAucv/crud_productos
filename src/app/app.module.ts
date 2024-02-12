@@ -13,14 +13,13 @@ import { SharedModule } from './shared/shared.module';
 import { DialogEliminarComponent } from './pages/components/dialog-eliminar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthGuard } from './auth.guard';
 import { NavBarComponent } from './pages/components/navBar/nav-bar.component';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
-import { TokenInterceptorService } from './service/token-interceptor.service';
 import { RegisterComponent } from './pages/register/register.component';
 import { MainPageComponentComponent } from './pages/main/main-page-component/main-page-component.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { CardProductoComponent } from './pages/main/card-producto/card-producto.component';
+import { DetalleProductoComponent } from './pages/main/detalle-producto/detalle-producto.component';
+import { SidebarComponent } from './pages/components/sideBar/sidebar.component';
 
 
 
@@ -38,6 +37,8 @@ import { CardProductoComponent } from './pages/main/card-producto/card-producto.
     UserPageComponent,
     MainPageComponentComponent,
     CardProductoComponent,
+    DetalleProductoComponent,
+    SidebarComponent
 
   ],
   imports: [

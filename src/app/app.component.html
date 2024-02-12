@@ -1,9 +1,26 @@
 <!-- solo se pone el nombre del template si nel # -->
-<ng-container *ngIf="!verificarSesion; else home">
+<!-- <ng-container *ngIf="!verificarSesion; else home">
   <router-outlet></router-outlet>
 </ng-container>
 
 <ng-template #home>
-  <app-navbar></app-navbar>
+  <app-navbar ></app-navbar>
   <router-outlet></router-outlet>
 </ng-template>
+ -->
+
+ <!-- el router outlet es el componente que permite
+  mostrar los componentes de las rutas -->
+
+<app-navbar *ngIf="verificarSesion" ></app-navbar>
+<router-outlet></router-outlet>
+
+ <!-- esto es para el navbar -->
+
+<!-- <mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+
